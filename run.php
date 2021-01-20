@@ -1,6 +1,7 @@
 <?php
 
-// code here
-$dispatcher = new Dispatcher();
-$dispatcher->run();
+declare(strict_types=1);
 
+// code here
+// $dispatcher = new \HPT\Dispatcher( ... );
+// $dispatcher->run();
