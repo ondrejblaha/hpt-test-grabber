@@ -6,11 +6,8 @@ namespace HPT;
 
 class Dispatcher
 {
-    /** @var Grabber */
-    private $grabber;
-
-    /** @var Output */
-    private $output;
+    private Grabber $grabber;
+    private Output $output;
 
     public function __construct(Grabber $grabber, Output $output)
     {
