@@ -7,6 +7,8 @@ namespace HPT;
 interface GrabberInterface
 {
     public function getPrice(string $productId): float;
+    public function getRatting(string $productId): float;
+    public function getName(string $productId): string;
 }
 
 class Grabber implements GrabberInterface {
