@@ -100,7 +100,7 @@ class Grabber implements GrabberInterface {
             $list = explode('>', $matches[1]);
             $name = trim(str_replace('&nbsp;','', htmlentities(end($list))));
         }
-        // <h1 title="Název produktu: Fractal Design Node 804" aria-label="Fractal Design Node 804">Fractal Design Node 804</h1>
+        
         $this->productsData[$code] = array('price' => (float)$price, 'ratting' => (float)$ratting, 'name' => $name);
     }
 }
