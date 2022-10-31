@@ -8,8 +8,6 @@ class Dispatcher
 {
     private Grabber $grabber;
     private Output $output;
-    private $status = false;
-    private $statusText = '';
 
     public function __construct(Grabber $grabber, Output $output)
     {
@@ -23,18 +21,15 @@ class Dispatcher
     public function run(): string
     {
 
+        $fileContent = '';
         $configFile = './input.txt';
         // nacteni configu
         if ($f = fopen($configFile,'r')) {
-            $fileContent = '';
-
+            
             while (!feof($f)) {
                 $fileContent .= fread($f, 8192);
             }
             fclose($f);
-        } else {
-            $this->statusText = 'Undefined config file';
-            $this->status = false;
         }
 
         $productList = explode("\n",$fileContent);
@@ -57,9 +52,6 @@ class Dispatcher
                     }
                 }
             }
-        } else {
-            $this->statusText = 'No products id';
-            $this->status = false;
         }
 
         
