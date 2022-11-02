@@ -1,0 +1,7 @@
+{
+    "name": "ondrejblaha/hpt-test-grabber",
+    "description": "HPT test",
+    "autoload": {
+      "classmap": ["src/"]
+    }
+}

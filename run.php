@@ -2,16 +2,13 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/vendor/autoload.php';
 
-require(__DIR__.'/src/Grabber.php');
-include(__DIR__.'/src/GrabberClass.php');
-require(__DIR__.'/src/Output.php');
-include(__DIR__.'/src/OutputClass.php');
-include(__DIR__.'/src/Dispatcher.php');
-
-$grabber = new \HPT\GrabberClass();
-$output = new \HPT\OutputClass();
+$grabber = new \HPT\CzcGrabber();
+$output = new \HPT\ProductOutput();
 
 $dispatcher = new \HPT\Dispatcher($grabber,$output);
-echo $dispatcher->run();
+$json = $dispatcher->run();
 
+header('Content-Type: application/json; charset=utf-8');
+echo $json;
