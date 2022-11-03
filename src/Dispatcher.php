@@ -11,6 +11,10 @@ class Dispatcher
 
     private string $inputFile = './input.txt';
 
+    /**
+     * @param Grabber $grabber
+     * @param Output $output
+     */
     public function __construct(Grabber $grabber, Output $output)
     {
         $this->grabber = $grabber;
@@ -24,13 +28,13 @@ class Dispatcher
     {
 
         $productCodes = $this->loadInputFile($this->inputFile);
-        
-        if(count($productCodes)>0) {
-            foreach($productCodes as $productCode) {
+
+        if (count($productCodes) > 0) {
+            foreach ($productCodes as $productCode) {
 
                 $product = $this->grabber->findProduct($productCode);
-                
-                if($product !== null) {
+
+                if ($product !== null) {
                     $this->output->addProduct($product);
                 } else {
                     $this->output->addProduct(new Product($productCode));
@@ -38,17 +42,21 @@ class Dispatcher
             }
         }
 
-        
         return $this->output->getJson();
     }
 
-    private function loadInputFile(string $filePath): array {
+    /**
+     * @param string $filePath
+     * @return array
+     */
+    private function loadInputFile(string $filePath): array
+    {
 
         $productCodes = array();
 
-        if (file_exists($filePath) ) {
-            if ($f = fopen($filePath,'r')) {
-                
+        if (file_exists($filePath)) {
+            if ($f = fopen($filePath, 'r')) {
+
                 while (($code = fgets($f)) !== false) {
                     $productCodes[] = trim($code);
                 }

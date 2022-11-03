@@ -6,5 +6,9 @@ namespace HPT;
 
 interface Grabber
 {
+    /**
+     * @param string $productCode
+     * @return Product|null
+     */
     public function findProduct(string $productCode): ?Product;
 }

@@ -3,5 +3,10 @@
     "description": "HPT test",
     "autoload": {
       "classmap": ["src/"]
-    }
+    },
+  "require": {
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "ext-libxml": "*"
+  }
 }

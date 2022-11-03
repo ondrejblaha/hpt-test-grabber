@@ -2,12 +2,16 @@
 
 declare(strict_types=1);
 
+use HPT\CzcGrabber;
+use HPT\Dispatcher;
+use HPT\ProductOutput;
+
 require_once __DIR__ . '/vendor/autoload.php';
 
-$grabber = new \HPT\CzcGrabber();
-$output = new \HPT\ProductOutput();
+$grabber = new CzcGrabber();
+$output = new ProductOutput();
 
-$dispatcher = new \HPT\Dispatcher($grabber,$output);
+$dispatcher = new Dispatcher($grabber,$output);
 $json = $dispatcher->run();
 
 header('Content-Type: application/json; charset=utf-8');
