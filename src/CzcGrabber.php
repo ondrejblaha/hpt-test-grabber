@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace HPT;
 
-use HPT\Product;
-
 class CzcGrabber implements Grabber {
 
     public function __construct() {

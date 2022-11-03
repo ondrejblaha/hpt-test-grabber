@@ -6,10 +6,10 @@ namespace HPT;
 
 class Product {
 
-    private $code;
-    private $price;
-    private $name;
-    private $ratting;
+    private string $code;
+    private ?float $price;
+    private ?string $name;
+    private ?float $ratting;
 
     public function __construct(string $code, ?float $price = null, ?string $name = null, ?float $ratting = null) {
         $this->code = $code;

@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace HPT;
 
-use HPT\Product;
-use HPT\Grabber;
-use HPT\Output;
-
 class Dispatcher
 {
     private Grabber $grabber;
