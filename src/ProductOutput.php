@@ -8,7 +8,7 @@ use HPT\Product;
 
 class ProductOutput implements Output {
 
-    private array $outputList;
+    private array $productList;
 
     public function __construct() {
         $this->productList = array();
